@@ -1,7 +1,7 @@
 [
 {
   "modid": "moneymakingmaker",
-  "name": "MoneyMakingRuiner",
+  "name": "MoneyMakingMaker",
   "description": "Skyblock Flipper Mod",
   "version": "${version}",
   "mcversion": "${mcversion}",
