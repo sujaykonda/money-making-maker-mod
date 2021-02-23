@@ -1,0 +1,16 @@
+[
+{
+  "modid": "moneymakingmaker",
+  "name": "MoneyMakingRuiner",
+  "description": "Skyblock Flipper Mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["_xGQD"],
+  "credits": "_xGQD",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
