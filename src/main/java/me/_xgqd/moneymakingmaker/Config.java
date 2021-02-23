@@ -18,12 +18,20 @@ public class Config {
 
     public static Property getHypixelKeyProp(){
         config.load();
-        return config.get("Settings", "Hypixel Api Key", "");
+        Property property = config.get("Settings", "Hypixel Api Key", "");
+        if(config.hasChanged()){
+            config.save();
+        }
+        return property;
     }
 
     public static Property getMacroState(){
         config.load();
-        return config.get("Settings", "Macro Safeness State (0: Type it in, 1: Copy & Paste, 2: Auto Command)", 1);
+        Property property = config.get("Settings", "Macro Safeness State (0: Type it in, 1: Copy & Paste, 2: Auto Command)", 1);
+        if(config.hasChanged()){
+            config.save();
+        }
+        return property;
     }
 
     public static MacroState propToMacroState(Property macroState){
