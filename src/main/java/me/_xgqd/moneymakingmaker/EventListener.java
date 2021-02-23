@@ -56,9 +56,9 @@ public class EventListener {
             {
                 IOUtils.closeQuietly(in);
             }
-            System.out.println("Latest mod version = "+latestVersion);
+            System.out.println("Latest mod version = "+ latestVersion);
             if(!VERSION.equals(latestVersion)){
-                ChatComponentText text = new ChatComponentText("MoneyMakingMaker Mod \nNew Update Released \nDownload Link: https://github.com/sujaykonda/money-making-maker-mod/releases \nLatest Version: " + VERSION);
+                ChatComponentText text = new ChatComponentText("§aMoney Making Maker Mod \n§bNew Update Released \n§ehttps://github.com/sujaykonda/money-making-maker-mod/releases \n§aLatest Version§r: §c" + latestVersion);
                 ChatStyle style = new ChatStyle();
                 style.setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText("https://github.com/sujaykonda/money-making-maker-mod/releases")));
                 style.setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/sujaykonda/money-making-maker-mod/releases"));
