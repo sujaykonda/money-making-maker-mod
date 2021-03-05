@@ -61,7 +61,7 @@ public class AuctionFlipCommand extends CommandBase {
                                     int i = 0;
 
                                     while(i < auctions.size() && auctions.getPrice(i) < data.binData.get(s).getPrice(0)){
-                                        if(auctions.get(0).getTimeLeft() < 180000){
+                                        if(auctions.get(i).getTimeLeft() < 180000){
                                             FlipData flip = new FlipData();
                                             flip.itemId = s;
                                             flip.profit = data.binData.get(s).getPrice(0) - auctions.getPrice(i);

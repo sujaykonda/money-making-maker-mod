@@ -14,23 +14,28 @@ public class Config {
     public static void init(File file){
         configFile = file;
         config = new Configuration(configFile);
+        config.load();
+        getHypixelKeyProp();
+        getMacroState();
     }
 
     public static Property getHypixelKeyProp(){
         config.load();
-        Property property = config.get("Settings", "Hypixel Api Key", "");
+        Property property = config.get(Configuration.CATEGORY_GENERAL, "Hypixel Api Key", "");
+        saveConfig();
+        return property;
+    }
+
+    public static void saveConfig(){
         if(config.hasChanged()){
             config.save();
         }
-        return property;
     }
 
     public static Property getMacroState(){
         config.load();
-        Property property = config.get("Settings", "Macro Safeness State (0: Type it in, 1: Copy & Paste, 2: Auto Command)", 1);
-        if(config.hasChanged()){
-            config.save();
-        }
+        Property property = config.get(Configuration.CATEGORY_GENERAL, "Macro Safeness State (0: Type it in, 1: Copy & Paste, 2: Auto Command)", 1);
+        saveConfig();
         return property;
     }
 
