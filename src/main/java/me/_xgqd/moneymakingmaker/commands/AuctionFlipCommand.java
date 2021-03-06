@@ -36,6 +36,7 @@ public class AuctionFlipCommand extends CommandBase {
     private static class FlipData{
         String itemId;
         int profit;
+        int i;
     }
 
     @Override
@@ -61,10 +62,11 @@ public class AuctionFlipCommand extends CommandBase {
                                     int i = 0;
 
                                     while(i < auctions.size() && auctions.getPrice(i) < data.binData.get(s).getPrice(0)){
-                                        if(auctions.get(i).getTimeLeft() < 180000){
+                                        if(auctions.get(i).getTimeLeft() < 180000 && auctions.get(i).getTimeLeft() > 20000){
                                             FlipData flip = new FlipData();
                                             flip.itemId = s;
                                             flip.profit = data.binData.get(s).getPrice(0) - auctions.getPrice(i);
+                                            flip.i = i;
                                             bestFlips.add(flip);
                                         }
                                         i++;
@@ -78,10 +80,10 @@ public class AuctionFlipCommand extends CommandBase {
                                 s.addChatMessage(text);
                                 break;
                             }
-                            String auctioneer_uuid = data.auctionData.get(bestFlips.get(i).itemId).get(0).getAuctioneerUUID();
+                            String auctioneer_uuid = data.auctionData.get(bestFlips.get(i).itemId).get(bestFlips.get(i).i).getAuctioneerUUID();
                             System.out.println(auctioneer_uuid);
-                            String auctioneer_name = data.auctionData.get(bestFlips.get(i).itemId).get(0).getAuctioneerName();
-                            System.out.println(data.auctionData.get(bestFlips.get(i).itemId).get(0).getTimeLeft());
+                            String auctioneer_name = data.auctionData.get(bestFlips.get(i).itemId).get(bestFlips.get(i).i).getAuctioneerName();
+                            System.out.println(data.auctionData.get(bestFlips.get(i).itemId).get(bestFlips.get(i).i).getTimeLeft());
                             String reply = "§bItem§r: §a" + bestFlips.get(i).itemId + "\n§bProfit§r: §a" + bestFlips.get(i).profit;
                             if(Config.propToMacroState(Config.getMacroState()).equals(Config.MacroState.TYPE_IN)){
                                 reply += "\nAuctioneer: " + auctioneer_name;

@@ -35,7 +35,7 @@ import java.net.URL;
 public class Main
 {
     public static final String MODID = "moneymakingmaker";
-    public static final String VERSION = "0.2";
+    public static final String VERSION = "0.3";
     public static Hypixel hypixel;
 
     @EventHandler
