@@ -3,7 +3,7 @@
 ## IMPORTANT NOTE, THIS USES LATEST VERSION OF FORGE 1.8.9!!
 
 ## Overview 
-This is a minecraft mod that helps you make bank in minecraft hypixel skyblock by generating flips
+This is a minecraft mod that helps you make ingame coins in minecraft hypixel skyblock by generating flips
 
 ## Features
 - Auction Flipping
