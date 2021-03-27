@@ -15,7 +15,7 @@ Steps
 2. Then click on the jar file and move to mod folder  
 
 ## Set up
-To change the config of Money Making Maker, you must click esc
+To change the config of Money Making Maker, you must click esc  
 Click on "mod options"  
 ![Mod options](https://user-images.githubusercontent.com/50930165/112737442-08e00280-8f31-11eb-9aa8-5a5494d67a01.png)
 Then click on MoneyMakingMaker in your mods list, and then click on config  
