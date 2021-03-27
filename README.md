@@ -6,8 +6,8 @@
 This is a minecraft mod that helps you make ingame coins in minecraft hypixel skyblock by generating flips
 
 ## Features
-- Auction Flipping
-- Bin Flipping
+- Auction Flipping - This searches through the auction house and finds the best items to flip using their price. It also makes sure that the item is close to selling
+- Bin Flipping - This does the same but with buy it nows, and finds the best flip using the items prices.
 
 ## Installation Proccess
 Steps  
