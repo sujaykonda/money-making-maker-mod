@@ -1,3 +1,49 @@
+# Money Making Maker MC Mod
+
+## IMPORTANT NOTE, THIS USES LATEST VERSION OF FORGE 1.8.9!!
+
+## Overview 
+This is a minecraft mod that helps you make bank in minecraft hypixel skyblock by generating flips
+
+## Features
+- Auction Flipping
+- Bin Flipping
+
+## Installation Proccess
+Steps  
+1. Click on this link: https://github.com/sujaykonda/money-making-maker-mod/releases/latest 
+2. Then click on the jar file and move to mod folder  
+
+## Set up
+To change the config of Money Making Maker, you must click esc
+Click on "mod options"  
+![Mod options](https://user-images.githubusercontent.com/50930165/112737442-08e00280-8f31-11eb-9aa8-5a5494d67a01.png)
+Then click on MoneyMakingMaker in your mods list, and then click on config  
+![MoneyMakingMaker](https://user-images.githubusercontent.com/50930165/112737476-40e74580-8f31-11eb-8ec2-cfbfb517e0f4.png)
+In the config you must input api key (To get api key in hypixel you must type /api new)
+Macro Safeness is pretty self explanitory  
+If you worry about getting banned put it to 0  
+If you dont care then but it to 2  
+Else just but it at 1  
+![Config](https://user-images.githubusercontent.com/50930165/112737533-9ae80b00-8f31-11eb-8747-af85bb285938.png)
+**After this you MUST RE LOG**
+
+## Usage/Commands
+
+- /binflip (budget)
+- /auctionflip (budget)
+
+Usage Examples:  
+You want to flip 1 million coins
+/binflip 1000000  
+After 50 seconds or so a bunch of text will pop up
+You can click on the text and click enter to get into the /ah
+![Result](https://user-images.githubusercontent.com/50930165/112737707-c4556680-8f32-11eb-8e99-7516ae1a16b1.png)
+
+## Extra Notes
+This mod has been optimizer to be very fast and very convienent.
+
+# Help by suppporting the mod
 -------------------------------------------
 Source installation information for modders
 -------------------------------------------
