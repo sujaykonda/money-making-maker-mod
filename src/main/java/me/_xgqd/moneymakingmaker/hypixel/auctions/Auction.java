@@ -1,13 +1,13 @@
 package me._xgqd.moneymakingmaker.hypixel.auctions;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import me._xgqd.moneymakingmaker.hypixel.Request;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.zip.GZIPInputStream;
+
+import com.google.gson.JsonObject;
+
+import me._xgqd.moneymakingmaker.hypixel.Request;
 
 public class Auction {
     String id;
@@ -24,17 +24,18 @@ public class Auction {
 
     public Auction(JsonObject raw_data) throws IOException {
         bin = raw_data.has("bin") && raw_data.get("bin").getAsBoolean();
-        price = raw_data.get("highest_bid_amount").getAsInt() == 0 ? raw_data.get("starting_bid").getAsInt() : raw_data.get("highest_bid_amount").getAsInt();
+        price = raw_data.get("highest_bid_amount").getAsInt() == 0 ? raw_data.get("starting_bid").getAsInt()
+                : raw_data.get("highest_bid_amount").getAsInt();
         char[] item_bytes = decodeBytes(raw_data.get("item_bytes").getAsString());
         String field = "";
         int i = item_bytes.length - 1;
-        while(true){
-            if(item_bytes[i] < ' '){
-                if(field.equals("di")){
+        while (true) {
+            if (item_bytes[i] < ' ') {
+                if (field.equals("di")) {
                     break;
                 }
                 field = "";
-            }else{
+            } else {
                 field += item_bytes[i];
             }
             i--;
@@ -42,7 +43,7 @@ public class Auction {
         id = "";
         i += 5;
         char c;
-        while((c = item_bytes[i]) >= ' '){
+        while ((c = item_bytes[i]) >= ' ') {
             id += c;
             i++;
         }
@@ -69,7 +70,7 @@ public class Auction {
         return string.toString().toCharArray();
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
@@ -77,15 +78,15 @@ public class Auction {
         return bin;
     }
 
-    public int getPrice(){
+    public int getPrice() {
         return price;
     }
 
-    public String getAuctioneerUUID(){
+    public String getAuctioneerUUID() {
         return auctioneer;
     }
 
-    public long getEnd(){
+    public long getEnd() {
         return end;
     }
 
@@ -93,16 +94,20 @@ public class Auction {
         return start;
     }
 
-    public long getTimeLeft(){
+    public long getTimeLeft() {
         return end - System.currentTimeMillis();
     }
 
     public String getAuctioneerName() throws IOException {
-        JsonArray names = Request.readJsonFromUrl("https://api.mojang.com/user/profiles/" + auctioneer + "/names").getAsJsonArray();
-        return names.get(names.size()-1).getAsJsonObject().get("name").getAsString();
+        JsonObject profile = Request
+                .readJsonFromUrl("https://sessionserver.mojang.com/session/minecraft/profile/" + auctioneer)
+                .getAsJsonObject();
+
+        // Extract the "name" field directly from the response
+        return profile.get("name").getAsString();
     }
 
-    public String toString(){
+    public String toString() {
         return String.valueOf(getPrice());
     }
 }
